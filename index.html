@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"">
+    <title>Clock</title>
+    <script src="static/js/script.js"></script>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+    <div class="control_panel">
+        <div style="margin-bottom: 10px;">Sweeping seconds hand</div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>    
+    </div>
+
+    <div class="content">
+        <img class="watch" src="static/images/watch.png" alt="watch">
+        <span id="hours_hand" class="hour" style="transform: rotate(270.0deg);"></span>
+        <span id="minutes_hand" class="minute" style="transform: rotate(270.0deg);"></span>
+        <span id="seconds_hand" class="second" style="transform: rotate(270.0deg);"></span>
+        <span class="circle"></span>
+    </div>
+</body>
+</html>
