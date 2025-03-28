@@ -2,17 +2,20 @@ document.addEventListener("DOMContentLoaded", function () {
   function syncClock() {
     const date = new Date();
     setClockHands("seconds_hand", date.getSeconds() * 6);
-    setClockHands("minutes_hand", date.getMinutes() * 60 * 0.1);
+    setClockHands(
+      "minutes_hand",
+      date.getMinutes() * 6 + 0.1 * date.getSeconds()
+    );
     setClockHands(
       "hours_hand",
-      date.getHours() * 3600 * 0.0017 + 0.008 * date.getMinutes()
+      date.getHours() * 30 + 0.0017 * date.getMinutes() * 60
     );
   }
 
   function mechClockIncr() {
-    changeHandPosition("seconds_hand", 2);
-    changeHandPosition("minutes_hand", 0.0333);
-    changeHandPosition("hours_hand", 0.000567);
+    changeHandPosition("seconds_hand", 1);
+    changeHandPosition("minutes_hand", 0.0166);
+    changeHandPosition("hours_hand", 0.000283);
   }
 
   function setClockHands(id, degrees) {
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startClock() {
     return modeSwitch.checked
-      ? window.setInterval(mechClockIncr, 333)
+      ? window.setInterval(mechClockIncr, 167)
       : window.setInterval(quartzClockIncr, 1000);
   }
 
