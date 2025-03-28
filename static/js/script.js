@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const date = new Date();
     setClockHands("seconds_hand", date.getSeconds() * 6);
     setClockHands("minutes_hand", date.getMinutes() * 60 * 0.1);
-    setClockHands("hours_hand", date.getHours() * 3600 * 0.0017);
+    setClockHands(
+      "hours_hand",
+      date.getHours() * 3600 * 0.0017 + 0.008 * date.getMinutes()
+    );
   }
 
   function mechClockIncr() {
